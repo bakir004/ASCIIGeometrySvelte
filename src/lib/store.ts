@@ -11,5 +11,7 @@ export const shapeProperties = writable({
     betaSpacing: 0.02,
     lightSourceX: 0,
     lightSourceY: 1,
-    lightSourceZ: -1
+    lightSourceZ: -1,
+    screenWidth: 110,
+    screenHeight: 75
 });

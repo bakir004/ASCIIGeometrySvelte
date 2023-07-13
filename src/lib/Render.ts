@@ -15,9 +15,9 @@ export function render(angleX: number, angleY: number, angleZ: number, shapeProp
     const zDistances: number[][] = [];
     const screen: string[][] = [];
 
-    for (let y = 0; y < screenHeightInPixels; y++) {
-        zDistances[y] = new Array(screenWidthInPixels).fill(0);
-        screen[y] = new Array(screenWidthInPixels).fill(' ');
+    for (let y = 0; y < shapeProperties.screenHeight; y++) {
+        zDistances[y] = new Array(shapeProperties.screenWidth).fill(0);
+        screen[y] = new Array(shapeProperties.screenWidth).fill(' ');
     }
 
     for (let alpha = 0; alpha < 2 * Math.PI; alpha += shapeProperties.alphaSpacing) {
@@ -30,11 +30,11 @@ export function render(angleX: number, angleY: number, angleZ: number, shapeProp
             finalPoint = rotatePointY(finalPoint, angleY).add(new Point(0, 0, shapeProperties.distanceOfDonutFromViewer));
             const ooz = 1 / finalPoint.z;
 
-            const projectedX = Math.floor(screenWidthInPixels / 2 + finalPoint.x * distanceOfScreenFromViewer * ooz);
-            const projectedY = Math.floor(screenHeightInPixels / 2 - finalPoint.y * distanceOfScreenFromViewer * ooz);
+            const projectedX = Math.floor(shapeProperties.screenWidth / 2 + finalPoint.x * distanceOfScreenFromViewer * ooz);
+            const projectedY = Math.floor(shapeProperties.screenHeight / 2 - finalPoint.y * distanceOfScreenFromViewer * ooz);
 
-            if(projectedX < 0 || projectedX >= screenWidthInPixels || isNaN(projectedX)) continue;
-            if(projectedY < 0 || projectedY >= screenHeightInPixels || isNaN(projectedY)) continue;
+            if(projectedX < 0 || projectedX >= shapeProperties.screenWidth || isNaN(projectedX)) continue;
+            if(projectedY < 0 || projectedY >= shapeProperties.screenHeight || isNaN(projectedY)) continue;
 
             let luminanceVector = rotateOnAll3Axes(new Vector(cosAlpha, sinAlpha, 0), angleX, beta, angleZ);
             luminanceVector = rotateY(luminanceVector, angleY);

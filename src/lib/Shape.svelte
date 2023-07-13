@@ -16,7 +16,7 @@
 
 </script>
 
-<main class="md:h-fit">
+<main class="md:h-fit absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
     {#each screen as row}
         <div class="font-mono md:leading-3 md:tracking-[4px] md:text-md sm:leading-[8px] sm:text-sm sm:tracking-widest text-xs leading-[6px]">
             {#each row as char}
