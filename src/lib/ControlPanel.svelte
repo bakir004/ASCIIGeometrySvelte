@@ -97,7 +97,7 @@
     </div>
 {:else}
 {#if (open)}
-    <div on:click={toggleOpen} class="w-screen absolute top-0 bottom-0 left-[300px] z-20"></div>
+    <div on:click={toggleOpen} class="w-[calc(100vw-300px)] absolute top-0 bottom-0 left-[300px] z-20"></div>
 {/if}
 <main style="scrollbar-width: thin;" class={`w-[300px] z-10 top-0 bottom-0 max-h-screen overflow-y-scroll overflow-x-hidden py-10 bg-slate-900 bg-opacity-70 px-6 absolute transition ${open ? "left-0" : "-left-[300px]"}`}>
     <div on:click={toggleOpen} class="cursor-pointer absolute top-4 right-4">
