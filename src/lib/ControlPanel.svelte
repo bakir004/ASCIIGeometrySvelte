@@ -59,7 +59,6 @@
         else if(h < 800) newShapeProperties.screenHeight = 45;
         else newShapeProperties.screenHeight = 70;
 
-        console.log(newShapeProperties)
         shapeProperties.set({...newShapeProperties})
     }
 

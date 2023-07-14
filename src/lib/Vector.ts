@@ -12,6 +12,7 @@ export class Vector {
     }
 
     normalize(): Vector {
+        if(this.x === 0 && this.y === 0 && this.z === 0) return this;
         return new Vector(
             this.x / this.magnitude,
             this.y / this.magnitude,
