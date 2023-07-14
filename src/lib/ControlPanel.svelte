@@ -95,14 +95,17 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
     </div>
-    {:else}
-
+{:else}
+{#if (open)}
+    <div on:click={toggleOpen} class="w-screen absolute top-0 bottom-0 left-[300px] z-20"></div>
+{/if}
 <main style="scrollbar-width: thin;" class={`w-[300px] z-10 top-0 bottom-0 max-h-screen overflow-y-scroll overflow-x-hidden py-10 bg-slate-900 bg-opacity-70 px-6 absolute transition ${open ? "left-0" : "-left-[300px]"}`}>
     <div on:click={toggleOpen} class="cursor-pointer absolute top-4 right-4">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
     </div>
+
     <div class="text-2xl lilita tracking-wide">
         ASCII Geometry
     </div>

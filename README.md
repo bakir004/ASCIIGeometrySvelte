@@ -1,4 +1,4 @@
-## LIVE PREVIEW ON [Netlify](https://precious-heliotrope-1cc319.netlify.app/)
+### LIVE PREVIEW ON [Netlify](https://starlit-manatee-01e233.netlify.app/)
 
 # Svelte + TS + Vite
 
