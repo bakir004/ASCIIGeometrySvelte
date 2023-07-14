@@ -13,5 +13,6 @@ export const shapeProperties = writable({
     lightSourceY: 1,
     lightSourceZ: -1,
     screenWidth: 110,
-    screenHeight: 75
+    screenHeight: 75,
+    type: 'donut'
 });

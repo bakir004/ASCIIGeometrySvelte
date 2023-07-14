@@ -5,6 +5,7 @@
 
     let paused = false;
     let open = false;
+    let type = 'donut'
 
     let outerHeight = 0, outerWidth = 0;
 
@@ -68,6 +69,13 @@
         open = !open;
     }
 
+    const setType = (bodyType) => {
+        type = bodyType
+        const newShapeProperties = {...$shapeProperties}
+        newShapeProperties.type = bodyType;
+        shapeProperties.set({...newShapeProperties})
+    }
+
 </script>
 
 
@@ -106,27 +114,33 @@
     <div class="text-slate-400 opensans">
         by <a href="http://www.bakircinjarevic.com" class="underline hover:text-slate-300 text-inherit cursor-pointer">Bakir Činjarević</a>
     </div>
-    <div class="border-b-slate-600 border-b pb-3 mt-5">
+    <div class="flex items-center justify-center gap-2 mt-3">
+        <div on:click={() => setType('donut')} class={`${type === 'donut' ? 'bg-slate-700' : 'bg-slate-800'} cursor-pointer rounded px-2`}>Donut</div>
+        <div on:click={() => setType('cube')}  class={`${type === 'cube' ? 'bg-slate-700' : 'bg-slate-800'} cursor-pointer rounded px-2`}>Cube</div>
+    </div>
+    <div class="border-b-slate-600 border-b pb-3">
         <Slider
                 on:change={handleChange}
                 defaultValue={$shapeProperties.donutRadius}
-                name="Donut radius"
+                name="Radius"
                 propertyName="donutRadius"
         ></Slider>
+        {#if (type === 'donut')}
         <Slider
                 on:change={handleChange}
                 defaultValue={$shapeProperties.donutThicknessRadius}
-                name="Donut thickness"
+                name="Thickness"
                 propertyName="donutThicknessRadius"
         ></Slider>
         <Slider
                 on:change={handleChange}
                 defaultValue={$shapeProperties.distanceOfDonutFromViewer}
-                name="Distance of donut"
+                name="Distance"
                 propertyName="distanceOfDonutFromViewer"
                 max={200}
                 step={1}
         ></Slider>
+        {/if}
     </div>
     <div class="border-b-slate-600 border-b pb-3 mt-5">
         <Slider
@@ -164,6 +178,7 @@
                 max={0.5}
                 step={0.02}
         ></Slider>
+        {#if (type === 'donut')}
         <Slider
                 on:change={handleChange}
                 defaultValue={$shapeProperties.betaSpacing}
@@ -173,6 +188,7 @@
                 max={0.5}
                 step={0.02}
         ></Slider>
+        {/if}
     </div>
     <div class="border-b-slate-600 border-b pb-3 mt-5">
         <Slider
