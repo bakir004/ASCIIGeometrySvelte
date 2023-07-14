@@ -1,3 +1,5 @@
+# LIVE PREVIEW ON [Netlify](https://jovial-eclair-57a1d3.netlify.app/)
+
 # Svelte + TS + Vite
 
 This template should help get you started developing with Svelte and TypeScript in Vite.
