@@ -1,4 +1,4 @@
-# LIVE PREVIEW ON [Netlify](https://jovial-eclair-57a1d3.netlify.app/)
+## LIVE PREVIEW ON [Netlify](https://precious-heliotrope-1cc319.netlify.app/)
 
 # Svelte + TS + Vite
 
